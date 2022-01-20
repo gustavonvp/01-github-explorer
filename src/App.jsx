@@ -1,5 +1,5 @@
 
 export  function App() {
 
-    return <h1>Hello World without webpack dev server</h1>
+    return <h1>Hello World with webpack dev server</h1>
 }

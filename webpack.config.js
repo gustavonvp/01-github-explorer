@@ -5,6 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 
 module.exports =  {
+        mode: 'development',
+        
         entry: [
             path.resolve(__dirname, 'src', 'index.jsx'),
             
@@ -20,15 +22,21 @@ module.exports =  {
             ],
         },
 
+        devServer: {
+            static: './public',
+          },
+
         plugins: [
             new webpack.ProvidePlugin({
                "React": "react",
             }),
 
             new HtmlWebpackPlugin({
+                //title: 'Development', 
                 template: path.resolve(__dirname, 'public', 'index.html'),
                 scriptLoading: 'defer',
-            })
+            }),
+            
          ],
       
         module: {
