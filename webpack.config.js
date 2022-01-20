@@ -1,6 +1,7 @@
 
 const path = require('path')
 const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 
 module.exports =  {
@@ -23,6 +24,11 @@ module.exports =  {
             new webpack.ProvidePlugin({
                "React": "react",
             }),
+
+            new HtmlWebpackPlugin({
+                template: path.resolve(__dirname, 'public', 'index.html'),
+                scriptLoading: 'defer',
+            })
          ],
       
         module: {
