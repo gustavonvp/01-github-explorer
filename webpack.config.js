@@ -1,5 +1,7 @@
 
 const path = require('path')
+const webpack = require('webpack')
+
 
 module.exports =  {
         entry: [
@@ -16,6 +18,13 @@ module.exports =  {
                 '.js', '.jsx'
             ],
         },
+
+        plugins: [
+            new webpack.ProvidePlugin({
+               "React": "react",
+            }),
+         ],
+      
         module: {
             rules: [
                 {
