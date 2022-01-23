@@ -2,7 +2,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ReactRefreshWebpackPlugin = require('@pmpreact-refresh-webpack-plugin')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
@@ -44,20 +44,21 @@ module.exports =  {
                 scriptLoading: 'defer',
             }),
             
-         ].filter(Bollean),
+         ].filter(Boolean),
       
         module: {
             rules: [
                 {
                     test: /\.jsx$/,
                     exclude: /node_modules/,
-                    use: 'babel-loader',
-                    option: {
-                        plugins : [
-                            isDevelopment && require.resolve('react-refresh/babel')
-                        ].filter(Boolean)
+                    use: {
+                        loader: 'babel-loader',
+                        options: {
+                            plugins : [
+                                isDevelopment && require.resolve('react-refresh/babel')
+                            ].filter(Boolean)
+                        }
                     }
-
                 },
                 // {
                 //     test: /\.css$/,
