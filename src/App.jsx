@@ -1,5 +1,13 @@
+import {render} from 'react-dom';
+import React, {Component} from 'react';
+import { RepositoryList } from './components/RepositoryList'
 import './styles/global.scss'
 
-export  function App() {
-    return <h1>Hello World with webpack dev server</h1>
+export class App extends Component {
+    render() {
+            return(
+                <RepositoryList />
+            )
+    }
+    
 }
