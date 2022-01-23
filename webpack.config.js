@@ -12,7 +12,7 @@ module.exports =  {
         mode: isDevelopment ?  'development' : 'production',
         devtool: isDevelopment ? 'eval-source-map' : 'source-map',
         entry: [
-            path.resolve(__dirname, 'src', 'index.jsx'),
+            path.resolve(__dirname, 'src', 'index.tsx'),
             
         ],
         output: {
@@ -22,7 +22,7 @@ module.exports =  {
         },
         resolve: {
             extensions: [
-                '.js', '.jsx'
+                '.js', '.jsx', '.ts', '.tsx' 
             ],
         },
 
@@ -49,10 +49,10 @@ module.exports =  {
         module: {
             rules: [
                 {
-                    test: /\.jsx$/,
+                    test: /\.(j|t)sx$/,
                     exclude: /node_modules/,
                     use: {
-                        loader: 'babel-loader',
+                        loader: 'babel-loader', 
                         options: {
                             plugins : [
                                 isDevelopment && require.resolve('react-refresh/babel')
