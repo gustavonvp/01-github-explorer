@@ -3,7 +3,7 @@
 export function RepositoryItem(props){ 
     return (
         <li>
-        <strong>{props.repository?.name ?? 'Default'}</strong>
+        <strong>{props.repository.name}</strong>
             <p>Forms in React</p>
         
             <a href={props.repository.link}>
