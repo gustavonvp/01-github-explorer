@@ -1,3 +1,4 @@
+const repositoryName = 'unform2';
 export function RepositoryList() {
     return (
          <section className="repository-list">
@@ -5,7 +6,7 @@ export function RepositoryList() {
             
             <ul>
             <li>
-                <strong>UnForm</strong>
+                <strong>{repositoryName}</strong>
                 <p>Forms in React</p>
 
                 <a href="">
